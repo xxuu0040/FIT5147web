@@ -1,0 +1,194 @@
+.bar-tip {
+    position: absolute;
+    text-align: center;
+    width: 100px;
+    height: 40px;
+    padding: 0px;
+    font: 12px sans-serif;
+    background: lightsteelblue;
+    border: 0px;
+    border-radius: 2px;
+    pointer-events: none;
+}
+
+.btn-margin {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+#corSection .select-margin {
+    margin-left: 20px;
+}
+
+.map-tip {
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    text-align: center;
+    width: 120px;
+    height: 40px;
+    padding: 1px;
+    font: 12px sans-serif;
+    background: lightsteelblue;
+    box-shadow: 1px 1px 10px;
+    border-radius: 2px;
+    pointer-events: none;
+}
+
+#map_LGA .active {
+    fill: orange;
+}
+
+/* css for motion chart */
+#motionchart {
+    margin-left: 0px;
+    height: 506px;
+}
+
+/* text {
+    font: 10px sans-serif;
+  } */
+
+#motion_chart .dot {
+    stroke: #000;
+}
+
+#motion_chart .axis path,
+#motion_chart .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+#motion_chart .label {
+    fill: #777;
+}
+
+#motion_chart .country {
+    font: 400 48px"Helvetica Neue";
+    text-anchor: center;
+    fill: #777;
+}
+
+#motion_chart .year.label {
+    font: 400 100px "Helvetica Neue";
+    fill: #ddd;
+}
+
+#motion_chart .year.label.active {
+    fill: #aaa;
+}
+
+#motion_chart .hidden {
+    color: #f00;
+}
+
+#motion_chart .visible {
+    color: #0f0;
+}
+
+#motion_chart .overlay {
+    fill: none;
+    pointer-events: all;
+    cursor: ns-resize;
+}
+
+#motion_chart .d3-tip {
+    line-height: 1;
+    font-family: Lucida Grande, Lucida Sans Unicode, Arial, Helvetica;
+    font-size: 12px;
+    padding: 12px;
+    background: #EFEFEF;
+    color: #253756;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #000000;
+}
+
+.motion_container {
+    height: 1000px;
+}
+
+#lines .line {
+    /* stroke: steelblue; */
+    fill: none;
+    stroke-width: 1.5px;
+}
+
+#map_new .active {
+    fill: orange;
+}
+
+#mapWithLine .display-none {
+    display: none;
+}
+
+#corSection .display-none {
+    display: none;
+}
+
+#typeSection .display-none {
+    display: none;
+}
+
+#mapWithLine .shortselect {
+    background: #fafdfe;
+    height: 28px;
+    /* width:180px;   */
+    line-height: 28px;
+    border: 1px solid #9bc0dd;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+}
+
+#corSection .shortselect {
+    background: #fafdfe;
+    height: 28px;
+    width: 180px;
+    line-height: 28px;
+    border: 1px solid #9bc0dd;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+}
+
+#insight {
+    position: absolute;
+    font: 18px sans-serif;
+    margin-left: 40px;
+    top: 40px;
+    width: 320px;
+    left: 45px;
+    line-height: 1.5;
+    vertical-align: middle;
+}
+
+#welcome {
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nav-list a:hover {
+    background: var(--main-blue);
+}
+
+.nav-list a {
+    display: block;
+    font-size: 2.2rem;
+    padding: 2rem;
+}

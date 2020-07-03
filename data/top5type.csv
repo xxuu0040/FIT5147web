@@ -1,0 +1,46 @@
+LGA_NAME,value,type
+YARRA RANGES,631,Collision with a fixed object
+GEELONG,411,Collision with a fixed object
+CASEY,384,Collision with a fixed object
+HUME,357,Collision with a fixed object
+CARDINIA,332,Collision with a fixed object
+YARRA RANGES,53,collision with some other object
+MURRINDINDI,48,collision with some other object
+BAW BAW,44,collision with some other object
+WELLINGTON,27,collision with some other object
+ALPINE,25,collision with some other object
+MELBOURNE,2979,Collision with vehicle
+CASEY,2273,Collision with vehicle
+GEELONG,1922,Collision with vehicle
+DANDENONG,1917,Collision with vehicle
+BRIMBANK,1776,Collision with vehicle
+MELBOURNE,24,Fall from or in moving vehicle
+HUME,20,Fall from or in moving vehicle
+CASEY,15,Fall from or in moving vehicle
+WHITTLESEA,13,Fall from or in moving vehicle
+WHITEHORSE,13,Fall from or in moving vehicle
+MELBOURNE,7,Other accident
+PORT PHILLIP,3,Other accident
+BENDIGO,3,Other accident
+WYNDHAM,2,Other accident
+WHITTLESEA,2,Other accident
+MITCHELL,48,Struck animal
+BENDIGO,44,Struck animal
+WELLINGTON,37,Struck animal
+MACEDON RANGES,36,Struck animal
+WHITTLESEA,33,Struck animal
+MELBOURNE,205,No collision and no object struck
+YARRA RANGES,167,No collision and no object struck
+BAW BAW,140,No collision and no object struck
+MURRINDINDI,131,No collision and no object struck
+YARRA,121,No collision and no object struck
+MELBOURNE,742,Struck Pedestrian
+MORELAND,297,Struck Pedestrian
+GEELONG,267,Struck Pedestrian
+DANDENONG,246,Struck Pedestrian
+YARRA,239,Struck Pedestrian
+YARRA RANGES,95,Vehicle overturned (no collision)
+BAW BAW,92,Vehicle overturned (no collision)
+MURRINDINDI,90,Vehicle overturned (no collision)
+EAST GIPPSLAND,84,Vehicle overturned (no collision)
+WELLINGTON,56,Vehicle overturned (no collision)

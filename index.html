@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+
+</head>
+
+<body>
+    <!-- set the navigation bar -->
+    <nav class="navbar navbar-expand-sm bg-light fixed-top">
+        <a class="navbar-brand" href="#welcome">Welcome</a>
+        <ul class="navbar-nav">
+            <li class="navbar-item">
+                <a class="nav-link" href="#mapWithLine">Trends of accidents</a>
+            </li>
+            <li class="navbar-item">
+                <a class="nav-link" href="#typeSection">Common Type of accidents</a>
+            </li>
+            <li class="navbar-item">
+                <a class="nav-link" href="#corSection">correlation with different factors</a>
+            </li>
+        </ul>
+    </nav>
+    <!-- section one the welcome page -->
+    <section id="welcome">
+        <div style="text-align: center;">
+            <h1>Welcome to the Narrative Visualization Project</h1>
+            <h2 style="margin-top: 20px;">Exploration about accidents in Victoria</h2>
+            <h4 style="margin-top: 60px;">Created by: Xin Xu<br>Student id: 30421225</h4>
+        </div>
+    </section>
+    <!-- section two the trend of accidents -->
+    <section id="mapWithLine">
+        <!-- the select button -->
+        <div id='numberButton' class="btn-group btn-margin" role="group">
+            <button type="button" class="btn btn-secondary" value="bubble">trends of accident number </button>
+            <button type="button" class="btn btn-secondary" value="mapLine">see details</button>
+        </div>
+        <div class="row display-none" id="mapLine">
+            <!-- map -->
+            <div class='col-6' id="mt_data"></div>
+            <!-- line chart -->
+            <div class="col-6">
+                <!-- dropdown box -->
+                <div>
+                    <select id="lineDropdown" align="center" class="dropdown-primary shortselect">
+                        <option id="" , value='topAccident'>Top 5 with most accidents</option>
+                        <option id="" , value='topOut'>Top 5 accidents outer of greater melbourne</option>
+                        <option id="" , value='topPop'>Top 5 with most population</option>
+                        <option id="" , value='topDensity'>Top 5 with most density</option>
+                    </select>
+                </div>
+                <div id="lines"></div>
+            </div>
+        </div>
+        <!-- motion chart -->
+        <div class="row " id="bubbleChart">
+            <div class="col-4">
+                <div id='insight' style="font-family: arial;">
+                    <h2>Insights</h2>
+                    <ul>
+                        <li>For most area, 2015 and 2016 is the peak and then decreasing gradually</li>
+                        <li>In each year, there are most accidents happen in Melbourne</li>
+                        <li>There are some correlation among accidents, injured number and population </li>
+                    </ul>
+                    <p>If you want to see the change of accidents based on the LGA in the last 6 years, you
+                        can choose 'see details' to switch to the other graph</p>
+                </div>
+            </div>
+            <div class="col-8" id="motionchart">
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-11">
+                        <button id='play' type="button" class="btn btn-outline-primary">Play</button>
+                        <button id='stop' type="button" class="btn btn-outline-primary">Stop</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- section three the common type of accidents -->
+    <section id="typeSection">
+        <!-- select button -->
+        <div id='typeButton' class="btn-group btn-margin" role="group">
+            <button type="button" class="btn btn-secondary" value="total">Types of accidents</button>
+            <button type="button" class="btn btn-secondary" value="detail">see details</button>
+        </div>
+        <!-- total type of accidents -->
+        <div class="row" id="typeTotal">
+            <div class="col-6" id="type-total"></div>
+            <div class="col-6" id="top-type"></div>
+        </div>
+        <!-- map with bar chart -->
+        <div class="row display-none" id="typeDetails">
+            <div class="col-6" id="map2"></div>
+            <div class="col-6" id="type-bar"></div>
+        </div>
+    </section>
+    <!-- section four the correlation with other factors -->
+    <section id="corSection">
+        <div id='corButton' class="btn-group btn-margin" role="group">
+            <button type="button" class="btn btn-secondary" value="correlation">correlation with other factors</button>
+            <button type="button" class="btn btn-secondary" value="histogram">correlation with time</button>
+        </div>
+        <!-- bar chart of time -->
+        <div class="row display-none" id="timeBar">
+            <div class='col-6' id="histogram1">
+                <div class="row select-margin">
+                    <p style="text-align: center">Select the first date: </p>
+                    <select id="barDropdown1" align="center" class="shortselect">
+                        <option id="" , value='Monday' selected="selected">Monday</option>
+                        <option id="" , value='Tuesday'>Tuesday</option>
+                        <option id="" , value='Wednesday'>Wednesday</option>
+                        <option id="" , value='Thursday'>Thursday</option>
+                        <option id="" , value='Friday'>Friday</option>
+                        <option id="" , value='Saturday'>Saturday</option>
+                        <option id="" , value='Sunday'>Sunday</option>
+                    </select>
+
+                </div>
+            </div>
+            <div class="col-6" id='histogram2'>
+                <div class="row select-margin">
+                    <p>Select the second date: </p>
+                    <select id="barDropdown2" align="center" class="shortselect">
+                        <option id="" , value='Monday'>Monday</option>
+                        <option id="" , value='Tuesday'>Tuesday</option>
+                        <option id="" , value='Wednesday'>Wednesday</option>
+                        <option id="" , value='Thursday'>Thursday</option>
+                        <option id="" , value='Friday'>Friday</option>
+                        <option id="" , value='Saturday' selected="selected">Saturday</option>
+                        <option id="" , value='Sunday'>Sunday</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <!-- correlation plot -->
+        <div class="row" id="corPlot">
+            <div class="col-4">
+                <div id='insight' style="font-family: arial;">
+                    <h2>Insights</h2>
+                    <ul>
+                        <li>There are more accidents occurred at the rush hour on the weekday</li>
+                        <li>The number of accidents have the correlation with the population, household vehicle number
+                            and the number of people who travel to work
+                        </li>
+                    </ul>
+                    <p>If you want to compare different days, you
+                        can choose 'correlation with time' to switch to the other graph</p>
+                </div>
+            </div>
+            <div class='col-8' id="correlation"></div>
+        </div>
+    </section>
+    <!-- tooltip -->
+    <div id="tool_bar" class="bar-tip" style="display: none"></div>
+    <div id="tool_map" class="map-tip" style="display: none"></div>
+
+    <!-- load the js -->
+    <script src="./script/totalType.js"></script>
+    <script src="./script/barchart.js"></script>
+    <script src="./script/map.js"></script>
+    <script src="./script/motionchart.js"></script>
+    <script src="./script/line.js"></script>
+    <script src="./script/typeBar.js"></script>
+    <script src="./script/correlationPlot.js"></script>
+
+    <script>
+        // click the button to switch different graphs
+        $("#numberButton button").click(function () {
+            let selectButton = $(this).val();
+            let elementMap = document.getElementById('mapLine'),
+                elementMotion = document.getElementById('bubbleChart');
+            if (selectButton === 'bubble') {
+                elementMap.classList.add('display-none');
+                elementMotion.classList.remove('display-none');
+            }
+            if (selectButton === 'mapLine') {
+                elementMotion.classList.add('display-none');
+                elementMap.classList.remove('display-none');
+            }
+        });
+
+        $("#corButton button").click(function () {
+            let selectButton = $(this).val();
+            let elementTime = document.getElementById('timeBar'),
+                elementCorrelation = document.getElementById('corPlot');
+            if (selectButton === 'histogram') {
+                elementCorrelation.classList.add('display-none');
+                elementTime.classList.remove('display-none');
+            }
+            if (selectButton === 'correlation') {
+                elementTime.classList.add('display-none');
+                elementCorrelation.classList.remove('display-none');
+            }
+        });
+
+        $("#typeButton button").click(function () {
+            let selectButton = $(this).val();
+            let elementTotal = document.getElementById('typeTotal'),
+                elementDetail = document.getElementById('typeDetails');
+            if (selectButton === 'total') {
+                elementDetail.classList.add('display-none');
+                elementTotal.classList.remove('display-none');
+            }
+            if (selectButton === 'detail') {
+                elementTotal.classList.add('display-none');
+                elementDetail.classList.remove('display-none');
+            }
+        });
+    </script>
+</body>
+
+</html>
